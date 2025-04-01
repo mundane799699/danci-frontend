@@ -13,3 +13,8 @@ export const login = async (email: string, password: string) => {
 
   return response;
 };
+
+export const getCurrentUser = async () => {
+  const response = await apiClient.get("/users/me");
+  return response;
+};
