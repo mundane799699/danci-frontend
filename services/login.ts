@@ -15,6 +15,11 @@ export const login = async (email: string, password: string) => {
 };
 
 export const getCurrentUser = async () => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    console.log("no token");
+    return null;
+  }
   const response = await apiClient.get("/users/me");
   return response;
 };

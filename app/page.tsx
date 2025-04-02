@@ -1,22 +1,10 @@
+import UserNav from "@/components/UserNav";
+import StartButton from "@/components/StartButton";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-      <nav className="absolute top-0 right-0 p-6">
-        <div className="flex items-center gap-4">
-          <a
-            href="/login"
-            className="text-sm font-semibold bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500"
-          >
-            登录
-          </a>
-          <a
-            href="/signup"
-            className="text-sm font-semibold bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500"
-          >
-            注册
-          </a>
-        </div>
-      </nav>
+      <UserNav />
 
       <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <main className="text-center">
@@ -27,12 +15,7 @@ export default function Home() {
             每天一封邮件，轻松记忆单词
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="/signup"
-              className="rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            >
-              开始使用
-            </a>
+            <StartButton />
             <a
               href="/about"
               className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
