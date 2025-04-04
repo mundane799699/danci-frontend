@@ -18,12 +18,8 @@ apiClient.interceptors.request.use(
 );
 
 apiClient.interceptors.response.use((res) => {
-  const { data, status } = res;
-  if (status === 200) {
-    return data;
-  } else {
-    return Promise.reject(data);
-  }
+  const { data } = res;
+  return data;
 });
 
 export default apiClient;
