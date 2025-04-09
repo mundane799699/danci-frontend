@@ -12,11 +12,11 @@ const Sidebar = () => {
     { name: "首页", path: "/dashboard" },
     { name: "邮件设置", path: "/dashboard/email-settings" },
     { name: "单词总览", path: "/dashboard/word-overview" },
-    { name: "偏好设置", path: "/dashboard/preferences" },
+    { name: "历史邮件", path: "/dashboard/history-email" },
   ];
 
   return (
-    <div className="w-64 bg-gray-100 p-4 border-r border-gray-200">
+    <div className="h-full w-64 bg-gray-100 p-4 border-r border-gray-200">
       <Logo className="mb-6" />
       <nav>
         <ul className="space-y-2">

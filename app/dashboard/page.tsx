@@ -32,45 +32,14 @@ const DashboardPage = () => {
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-3">偏好设置</h2>
-          <p className="text-gray-600 mb-4">自定义您的学习体验</p>
+          <h2 className="text-xl font-semibold mb-3">历史邮件</h2>
+          <p className="text-gray-600 mb-4">查看您的历史邮件</p>
           <Link
-            href="/dashboard/preferences"
+            href="/dashboard/history-email"
             className="text-blue-500 hover:text-blue-700 font-medium"
           >
-            设置偏好 →
+            查看历史邮件 →
           </Link>
-        </div>
-      </div>
-
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-xl font-semibold mb-4">学习进度</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-lg font-medium mb-2">本月学习</h3>
-            <div className="flex items-center">
-              <div className="w-full bg-gray-200 rounded-full h-2.5 mr-2">
-                <div
-                  className="bg-blue-500 h-2.5 rounded-full"
-                  style={{ width: "65%" }}
-                ></div>
-              </div>
-              <span className="text-sm font-medium">65%</span>
-            </div>
-            <p className="text-sm text-gray-500 mt-1">已学习 65 个单词</p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-medium mb-2">连续学习</h3>
-            <div className="flex items-center">
-              <div className="text-3xl font-bold text-blue-500 mr-2">7</div>
-              <div>
-                <p className="text-sm font-medium">天</p>
-                <p className="text-xs text-gray-500">继续保持！</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
