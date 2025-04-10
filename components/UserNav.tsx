@@ -20,7 +20,7 @@ export default function UserNav() {
             </span>
             <button
               onClick={logout}
-              className="text-sm font-semibold bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500"
+              className="text-sm font-semibold bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700"
             >
               退出
             </button>
@@ -29,13 +29,13 @@ export default function UserNav() {
           <>
             <Link
               href="/login"
-              className="text-sm font-semibold bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500"
+              className="text-sm font-semibold bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700"
             >
               登录
             </Link>
             <Link
               href="/signup"
-              className="text-sm font-semibold bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500"
+              className="text-sm font-semibold bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700"
             >
               注册
             </Link>

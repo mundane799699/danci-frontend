@@ -42,7 +42,7 @@ export const WordsCard: React.FC<WordsCardProps> = ({ word }) => {
       // 检查是否包含"###"
       if (line.trim().includes("###") || line.trim().includes("##")) {
         // 提取"###"以外的内容
-        const content = line.replace("#", "").trim();
+        const content = line.replaceAll("#", "").trim();
         // 返回加粗格式的内容
         return `**${content}**`;
       }
