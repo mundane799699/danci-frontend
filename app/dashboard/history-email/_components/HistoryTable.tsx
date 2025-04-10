@@ -77,13 +77,13 @@ const HistoryTable = () => {
     <div>
       <div className="flex flex-col gap-4">
         {historyResponse.histories.map((history) => (
-          <div key={history.id} className="bg-white p-4 rounded-lg shadow-md">
-            <div className="text-gray-700">
-              <div className="mb-2">{history.send_date}</div>
-              <div className="mb-2">
-                <WordsCard key={history.word.id} word={history.word} />
+          <div key={history.id} className="flex flex-col gap-4 bg-white p-4">
+            <span>{history.send_date}</span>
+            {history.words.map((word) => (
+              <div>
+                <WordsCard key={word.id} word={word} />
               </div>
-            </div>
+            ))}
           </div>
         ))}
       </div>

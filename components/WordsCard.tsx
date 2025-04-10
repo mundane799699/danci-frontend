@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
+import { Separator } from "@/components/ui/separator";
 
 interface Word {
   id: number;
@@ -33,17 +34,15 @@ export const WordsCard: React.FC<WordsCardProps> = ({ word }) => {
 
   // 处理content中的###标记，将其替换为**
   const processedContent = useMemo(() => {
-    console.log(word.content);
-
     // 按行分割内容
     const lines = word.content.split("\n");
 
     // 处理每一行
-    const processedLines = lines.map((line, index) => {
+    const processedLines = lines.map((line) => {
       // 检查是否包含"###"
-      if (line.trim().includes("###")) {
+      if (line.trim().includes("###") || line.trim().includes("##")) {
         // 提取"###"以外的内容
-        const content = line.replace("###", "").trim();
+        const content = line.replace("#", "").trim();
         // 返回加粗格式的内容
         return `**${content}**`;
       }
@@ -61,7 +60,8 @@ export const WordsCard: React.FC<WordsCardProps> = ({ word }) => {
       key={word.id}
       className={`p-4 rounded-md shadow-sm ${backgroundColor}`}
     >
-      <div className="font-medium text-2xl text-center mb-2">{word.word}</div>
+      <div className="font-bold text-2xl text-center mb-2">{word.word}</div>
+      <Separator className="my-4 bg-gray-400" />
       <div className="text-gray-600 mt-1 whitespace-pre-wrap">
         <ReactMarkdown>{processedContent}</ReactMarkdown>
       </div>

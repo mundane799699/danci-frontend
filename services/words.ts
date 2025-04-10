@@ -20,12 +20,11 @@ export interface WordPaginationResponse {
 export interface WordEmailHistory {
   id: number;
   user_id: number;
-  word_id: number;
   sent_at: string; // 日期时间字符串
   send_date: string;
   created_at: string;
   updated_at: string;
-  word: Word; // 关联的单词信息，使用上面已定义的Word接口
+  words: Word[]; // 关联的单词列表，使用上面已定义的Word接口
 }
 
 // 定义邮件历史分页响应类型
