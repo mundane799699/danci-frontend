@@ -23,3 +23,16 @@ export const getCurrentUser = async () => {
   const response = await apiClient.get("/users/me");
   return response;
 };
+
+export const register = async (
+  username: string,
+  email: string,
+  password: string
+) => {
+  const response = await apiClient.post("/register", {
+    username,
+    email,
+    password,
+  });
+  return response;
+};

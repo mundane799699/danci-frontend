@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Logo from "@/components/Logo";
+import { register } from "@/services/login";
+import { toast } from "sonner";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -25,23 +27,8 @@ export default function SignupPage() {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: formData.username,
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.detail || "注册失败");
-      }
-
+      await register(formData.username, formData.email, formData.password);
+      toast.success("注册成功");
       // 注册成功后跳转到登录页面
       router.push("/login");
     } catch (err: any) {

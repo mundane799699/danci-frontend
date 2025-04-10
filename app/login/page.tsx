@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Logo from "@/components/Logo";
 import { login } from "@/services/login";
-
+import { toast } from "sonner";
 export default function LoginPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -21,6 +21,7 @@ export default function LoginPage() {
       const data = (await login(formData.email, formData.password)) as any;
       // 保存token到localStorage
       localStorage.setItem("token", data.access_token);
+      toast.success("登录成功");
       // 登录成功后跳转到首页
       router.push("/");
     } catch (err: any) {
