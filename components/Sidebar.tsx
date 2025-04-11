@@ -5,7 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "@/components/Logo";
 
-const Sidebar = () => {
+interface SidebarProps {
+  onMenuClick?: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ onMenuClick }) => {
   const pathname = usePathname();
 
   const tabs = [
@@ -15,9 +19,14 @@ const Sidebar = () => {
     { name: "历史邮件", path: "/dashboard/history-email" },
   ];
 
+  const handleLinkClick = () => {
+    if (onMenuClick) {
+      onMenuClick();
+    }
+  };
+
   return (
     <div className="h-full w-64 bg-gray-100 p-4 border-r border-gray-200">
-      <Logo className="mb-6" />
       <nav>
         <ul className="space-y-2">
           {tabs.map((tab) => (
@@ -29,6 +38,7 @@ const Sidebar = () => {
                     ? "bg-blue-500 text-white"
                     : "hover:bg-gray-200"
                 }`}
+                onClick={handleLinkClick}
               >
                 {tab.name}
               </Link>
