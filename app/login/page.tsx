@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Logo from "@/components/Logo";
 import { login } from "@/services/login";
@@ -11,7 +11,21 @@ export default function LoginPage() {
     email: "",
     password: "",
   });
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
+
+  // 页面加载时检查是否有保存的登录信息
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("rememberedEmail");
+    const savedPassword = localStorage.getItem("rememberedPassword");
+    if (savedEmail && savedPassword) {
+      setFormData({
+        email: savedEmail,
+        password: savedPassword,
+      });
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,6 +35,17 @@ export default function LoginPage() {
       const data = (await login(formData.email, formData.password)) as any;
       // 保存token到localStorage
       localStorage.setItem("token", data.access_token);
+
+      // 如果选择了记住密码，保存登录信息
+      if (rememberMe) {
+        localStorage.setItem("rememberedEmail", formData.email);
+        localStorage.setItem("rememberedPassword", formData.password);
+      } else {
+        // 如果没有选择记住密码，清除之前保存的信息
+        localStorage.removeItem("rememberedEmail");
+        localStorage.removeItem("rememberedPassword");
+      }
+
       toast.success("登录成功");
       // 登录成功后跳转到首页
       router.push("/");
@@ -76,6 +101,25 @@ export default function LoginPage() {
                   setFormData({ ...formData, password: e.target.value })
                 }
               />
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <input
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+              />
+              <label
+                htmlFor="remember-me"
+                className="ml-2 block text-sm text-gray-900 dark:text-gray-300"
+              >
+                记住密码
+              </label>
             </div>
           </div>
 

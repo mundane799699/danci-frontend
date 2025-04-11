@@ -1,13 +1,13 @@
 import UserNav from "@/components/UserNav";
 import StartButton from "@/components/StartButton";
-
+import Navbar from "./_components/Navbar";
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-      <UserNav />
+    <div className="flex min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <Navbar />
 
-      <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <main className="text-center">
+      <div className="pt-16 max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <main className="text-center p-4">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             邮件单词
           </h1>
