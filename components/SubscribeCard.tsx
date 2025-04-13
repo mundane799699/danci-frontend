@@ -59,7 +59,7 @@ const SubscribeCard = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-4 right-4 flex space-x-2">
+        <div className="flex justify-end space-x-2">
           <button
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 transition-colors"
             aria-label="编辑"

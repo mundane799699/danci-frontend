@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
+import { Volume2 } from "lucide-react"; // 导入音量图标
 
 interface Word {
   id: number;
@@ -55,12 +56,46 @@ export const WordsCard: React.FC<WordsCardProps> = ({ word }) => {
     return content;
   }, [word.content]);
 
+  // 播放单词发音的函数
+  const playPronunciation = (word: string, type: number) => {
+    // type: 1 英音 2 美音
+    const audioUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(
+      word
+    )}&type=${type}`;
+    const audio = new Audio(audioUrl);
+    audio.play().catch((error) => {
+      console.error("播放发音失败:", error);
+    });
+  };
+
   return (
     <div
       key={word.id}
       className={`p-4 rounded-md shadow-sm ${backgroundColor}`}
     >
-      <div className="font-bold text-2xl text-center mb-2">{word.word}</div>
+      <div className="text-center mb-2 flex items-center justify-center">
+        <span className="text-2xl font-bold">{word.word}</span>
+        <div className="ml-2 flex items-center">
+          <button
+            onClick={() => playPronunciation(word.word, 1)}
+            className="p-1 rounded-full hover:bg-gray-200 transition-colors flex items-center"
+            aria-label="播放英音"
+          >
+            <Volume2 size={20} />
+          </button>
+          <span className="ml-1">英</span>
+        </div>
+        <div className="ml-2 flex items-center">
+          <button
+            onClick={() => playPronunciation(word.word, 2)}
+            className="p-1 rounded-full hover:bg-gray-200 transition-colors flex items-center"
+            aria-label="播放美音"
+          >
+            <Volume2 size={20} />
+          </button>
+          <span className="ml-1">美</span>
+        </div>
+      </div>
       <Separator className="my-4 bg-gray-400" />
       <div className="text-gray-600 mt-1 whitespace-pre-wrap">
         <ReactMarkdown>{processedContent}</ReactMarkdown>
