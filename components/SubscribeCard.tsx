@@ -42,6 +42,15 @@ const SubscribeCard = () => {
 
           <div className="flex items-center">
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300 w-40">
+              邮件类型:
+            </span>
+            <span className="text-sm text-gray-900 dark:text-white">
+              {subscribe.mail_type === "word" ? "单词" : "金句"}
+            </span>
+          </div>
+
+          <div className="flex items-center">
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 w-40">
               每日发送时间:
             </span>
             <span className="text-sm text-gray-900 dark:text-white">
@@ -49,14 +58,16 @@ const SubscribeCard = () => {
             </span>
           </div>
 
-          <div className="flex items-center">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 w-40">
-              每封邮件的单词数量:
-            </span>
-            <span className="text-sm text-gray-900 dark:text-white">
-              {subscribe.word_count}
-            </span>
-          </div>
+          {subscribe.mail_type === "word" && (
+            <div className="flex items-center">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 w-40">
+                每封邮件的单词数量:
+              </span>
+              <span className="text-sm text-gray-900 dark:text-white">
+                {subscribe.word_count}
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="flex justify-end space-x-2">
