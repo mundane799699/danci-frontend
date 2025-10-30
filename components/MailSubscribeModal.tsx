@@ -14,6 +14,7 @@ interface EditSubscribeModalProps {
 const defaultFormData = {
   id: 0,
   email: "",
+  mail_type: "word", // word or quote
   word_count: 0,
   send_time: "",
 };
@@ -94,29 +95,53 @@ const MailSubscribeModal = ({
 
           <div>
             <label
-              htmlFor="wordCount"
+              htmlFor="mailType"
               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
             >
-              每封邮件的单词数量
+              邮件类型
             </label>
-            <input
-              type="number"
-              id="wordCount"
-              name="word_count"
-              min="3"
-              max="10"
-              value={formData.word_count}
+            <select
+              id="mailType"
+              name="mail_type"
+              value={formData.mail_type || "word"}
               onChange={(e) =>
-                setFormData((prev) => ({
-                  ...prev,
-                  word_count: parseInt(e.target.value),
-                }))
+                setFormData((prev) => ({ ...prev, mail_type: e.target.value }))
               }
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-              placeholder="3-10个单词"
               required
-            />
+            >
+              <option value="word">单词</option>
+              <option value="quote">金句</option>
+            </select>
           </div>
+
+          {formData.mail_type !== "quote" && (
+            <div>
+              <label
+                htmlFor="wordCount"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+              >
+                每封邮件的单词数量
+              </label>
+              <input
+                type="number"
+                id="wordCount"
+                name="word_count"
+                min="3"
+                max="10"
+                value={formData.word_count}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    word_count: parseInt(e.target.value),
+                  }))
+                }
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                placeholder="3-10个单词"
+                required
+              />
+            </div>
+          )}
 
           <div>
             <label
