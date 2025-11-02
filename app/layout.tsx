@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "邮件单词 - 每天一封邮件，轻松记忆单词",
+  title: "人生提示词 - 每天一封提示词邮件，唤醒你内心的力量",
   description:
-    "通过邮件接收每日单词，科学记忆，持续学习。设置您喜欢的发送时间和单词数量，让背单词变得简单有趣。",
+    "通过邮件接收每日提示词，唤醒你内心的力量。设置您喜欢的发送时间和提示词数量，让生活变得简单有趣。",
 };
 
 export default function RootLayout({

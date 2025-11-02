@@ -3,53 +3,97 @@ import StartButton from "@/components/StartButton";
 import Navbar from "./_components/Navbar";
 export default function Home() {
   return (
-    <div className="flex min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="flex min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Navbar />
 
-      <div className="pt-16 max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <main className="text-center p-4">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
-            邮件单词
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-            每天一封邮件，轻松记忆单词
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <StartButton />
-            <a
-              href="/about"
-              target="_blank"
-              className="text-sm font-semibold leading-6 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-md px-4 py-2"
-            >
-              了解更多 <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </main>
+      <div className="w-full pt-16">
+        {/* Hero Section */}
+        <div className="max-w-6xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
+          <main className="text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center rounded-full px-4 py-1.5 mb-8 text-sm font-medium bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+              ✨ 每日精选，温暖到达
+            </div>
 
-        <div className="mt-24 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-800 border border-gray-300 dark:border-gray-600">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              个性化设置
-            </h3>
-            <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
-              设置您喜欢的邮件发送时间和每日单词数量
+            {/* Main Title */}
+            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+              人生提示词
+            </h1>
+
+            {/* Subtitle */}
+            <p className="mt-8 text-xl leading-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              每天一封提示词邮件，唤醒你内心的力量
             </p>
+
+            {/* CTA Buttons */}
+            <div className="mt-12 flex items-center justify-center gap-x-6">
+              <StartButton />
+              <a
+                href="/about"
+                target="_blank"
+                className="text-sm font-semibold leading-6 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-600 rounded-lg px-6 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-105"
+              >
+                了解更多 <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </main>
+
+          {/* Feature Card */}
+          <div className="mt-28 max-w-3xl mx-auto">
+            <div className="relative rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-10 shadow-xl dark:shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow duration-300">
+              {/* Decorative gradient */}
+              <div className="absolute -top-1 -left-1 -right-1 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-t-3xl"></div>
+
+              <div className="text-center">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  💌 如何开始
+                </h2>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                  设定你的邮箱和时间，
+                  <br />
+                  每天从数百条励志与智慧短句中，
+                  <br />
+                  随机挑选一条「人生提示词」用邮件发给你。
+                  <br />
+                  <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+                    这不是鸡汤，而是一则指导你人生方向的提示词。
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-800 border border-gray-300 dark:border-gray-600">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              科学记忆
-            </h3>
-            <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
-              基于艾宾浩斯遗忘曲线，帮助您更好地记忆单词
-            </p>
-          </div>
-          <div className="rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-800 border border-gray-300 dark:border-gray-600">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              持续学习
-            </h3>
-            <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
-              每天3-10个单词，循序渐进，轻松坚持
-            </p>
+
+          {/* Features Grid */}
+          <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="text-4xl mb-4">📧</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                定时推送
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                每天固定时间，准时送达你的邮箱
+              </p>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                精选内容
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                数百条优质句子，每日为你甄选
+              </p>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="text-4xl mb-4">💡</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                启发思考
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                不止于励志，更在于深度共鸣
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -59,10 +103,10 @@ export default function Home() {
         href="https://github.com/mundane799699/danci-backend"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+        className="fixed bottom-8 right-8 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-all duration-200 hover:scale-110 border border-gray-200 dark:border-gray-700"
       >
         <svg
-          className="w-8 h-8"
+          className="w-6 h-6"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"

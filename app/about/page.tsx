@@ -4,26 +4,15 @@ import Image from "next/image";
 const AboutPage = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-6">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">关于邮件单词</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-6">关于人生提示词</h1>
       <p className="text-gray-600 mb-4">
-        该网站主要是给我自己背单词用的。因为我自己是个懒人，懒得连背单词app都不想打开。
+        起初的时候该网站是给我自己背单词用的。因为我自己是个懒人，懒得连背单词app都不想打开。
       </p>
       <p className="text-gray-600 mb-4">
         所以我就想每天给自己发一封邮件，邮件里包含一些单词。
       </p>
       <p className="text-gray-600 mb-4">
-        这样我每天打开看一眼,就算是完成每天的背单词任务了。
-      </p>
-      <p className="text-gray-600 mb-4">
-        单词数据来自于{" "}
-        <Link
-          href="https://github.com/Ceelog/DictionaryByGPT4"
-          className="text-blue-500 hover:text-blue-700 underline font-medium"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          DictionaryByGPT4
-        </Link>
+        后来我背单词背的有点烦了，感觉还不如发送一些鸡汤金句，可以用来激励自己，让自己更加积极地面对生活。
       </p>
       <h1 className="text-2xl font-bold text-gray-800 mb-4">意见反馈</h1>
       <p className="text-gray-600 mb-4">
@@ -34,7 +23,7 @@ const AboutPage = () => {
       </p>
       <p className="text-gray-600 mb-4">
         或者扫描二维码添加我的微信,{" "}
-        <span className="font-bold">添加时请务必备注“邮件单词”</span>
+        <span className="font-bold">添加时请务必备注“人生提示词”</span>
       </p>
       <img
         src="https://cdn.mundane.ink/202402032206594.png"
