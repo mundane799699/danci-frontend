@@ -10,9 +10,7 @@ const DashboardPage = () => {
         <div className="flex flex-col justify-between bg-white p-6 rounded-lg shadow-md border border-gray-300 dark:border-gray-600">
           <div>
             <h2 className="text-xl font-semibold mb-3">邮件设置</h2>
-            <p className="text-gray-600 mb-4">
-              设置您的邮箱地址、单词数量和发送时间
-            </p>
+            <p className="text-gray-600 mb-4">设置您的邮箱地址和发送时间</p>
           </div>
           <Link
             href="/dashboard/email-settings"

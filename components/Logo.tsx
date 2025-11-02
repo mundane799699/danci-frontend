@@ -8,7 +8,7 @@ export default function Logo({ className }: { className?: string }) {
         href="/"
         className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
       >
-        邮件单词
+        人生提示词
       </Link>
     </div>
   );

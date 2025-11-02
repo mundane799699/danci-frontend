@@ -1,6 +1,4 @@
 import React from "react";
-import { Menu } from "lucide-react";
-import Logo from "@/components/Logo";
 import UserNav from "@/components/UserNav";
 
 const Navbar = () => {
