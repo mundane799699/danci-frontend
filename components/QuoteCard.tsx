@@ -34,11 +34,9 @@ export const QuoteCard: React.FC<QuoteCardProps> = ({ quote }) => {
       key={quote.id}
       className={`p-6 rounded-md shadow-sm ${backgroundColor} relative`}
     >
-      <div className="flex items-center gap-2 mt-4">
-        <div className="text-sm text-gray-400">#{quote.id}</div>
-        <p className="text-lg font-medium text-gray-800 leading-relaxed">
-          {quote.content}
-        </p>
+      <div className="flex gap-2">
+        <div className="text-lg text-gray-400">#{quote.id}</div>
+        <p className="text-lg font-medium text-gray-800">{quote.content}</p>
       </div>
     </div>
   );

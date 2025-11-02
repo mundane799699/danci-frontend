@@ -21,32 +21,6 @@ const DashboardPage = () => {
             去设置 →
           </Link>
         </div>
-
-        <div className="flex flex-col justify-between bg-white p-6 rounded-lg shadow-md border border-gray-300 dark:border-gray-600">
-          <div>
-            <h2 className="text-xl font-semibold mb-3">单词总览</h2>
-            <p className="text-gray-600 mb-4">查看和管理您的单词库</p>
-          </div>
-          <Link
-            href="/dashboard/word-overview"
-            className="text-blue-500 hover:text-blue-700 font-medium"
-          >
-            查看单词 →
-          </Link>
-        </div>
-
-        <div className="flex flex-col justify-between bg-white p-6 rounded-lg shadow-md border border-gray-300 dark:border-gray-600">
-          <div>
-            <h2 className="text-xl font-semibold mb-3">历史邮件</h2>
-            <p className="text-gray-600 mb-4">查看您的历史邮件</p>
-          </div>
-          <Link
-            href="/dashboard/history-email"
-            className="text-blue-500 hover:text-blue-700 font-medium"
-          >
-            查看历史邮件 →
-          </Link>
-        </div>
       </div>
     </div>
   );

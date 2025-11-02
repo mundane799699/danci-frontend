@@ -23,7 +23,7 @@ export interface QuoteEmailHistory {
   send_date: string;
   created_at: string;
   updated_at: string;
-  quotes: Quote[]; // 关联的金句列表
+  quote_content: string; // 金句内容
 }
 
 // 定义邮件历史分页响应类型
@@ -52,7 +52,7 @@ export const getQuoteEmailHistory = async (
   page: number,
   pageSize: number
 ): Promise<QuoteEmailHistoryPaginationResponse> => {
-  return await apiClient.get("/quote-email-history", {
+  return await apiClient.get("/quote-history", {
     params: {
       page,
       page_size: pageSize,

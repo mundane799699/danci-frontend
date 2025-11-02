@@ -16,6 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onMenuClick }) => {
     { name: "首页", path: "/dashboard" },
     { name: "邮件设置", path: "/dashboard/email-settings" },
     { name: "金句总览", path: "/dashboard/quote-overview" },
+    { name: "历史金句邮件", path: "/dashboard/quote-history" },
     { name: "单词总览", path: "/dashboard/word-overview" },
     { name: "历史单词邮件", path: "/dashboard/history-email" },
   ];
